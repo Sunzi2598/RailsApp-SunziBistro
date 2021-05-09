@@ -1,0 +1,17 @@
+%p#notice= notice
+%p.dashboard.title
+  %strong Title:
+  = @product.title
+%p.dashboard
+  %strong Description:
+  = @product.description
+%p.dashboard
+  %strong Price: 
+  = @product.price 
+%p
+  %strong Image: 
+  = image_tag @product.image, width: '200px', height: '270px' 
+
+= link_to 'Edit Product', edit_product_path(@product), class: 'path-edit'
+%br
+= link_to 'Back to Dashboard', dashboard_path, class:'path-edit'

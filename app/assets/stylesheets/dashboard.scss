@@ -1,0 +1,116 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input.dashboard,
+textarea.dashboard,
+select.dashboard,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 400px;
+  margin-left: 450px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input.dashboard {
+  height: auto !important;
+}
+
+.dashboard.btn.btn-primary {
+  width: 200px;
+  padding-top: 10px;
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  margin-left: 450px;
+}
+
+.dashboard-label {
+  margin-left: 450px;
+}
+
+.dashboard-image {
+  margin-left: 450px;
+  margin-bottom: 20px;
+}
+
+.path-new {
+  padding-left: 460px;
+  font-size: 20px;
+  font-family: "Lato", "Arial", sans-serif;
+  margin-right: 20px;
+}
+
+.path-new-dashboard {
+  padding-left: 560px;
+  font-size: 20px;
+  font-family: "Lato", "Arial", sans-serif;
+  margin-right: 20px;
+}
+
+.path-show {
+  padding-left: 460px;
+  font-size: 20px;
+  font-family: "Lato", "Arial", sans-serif;
+}
+
+.path-edit {
+  padding-left: 530px;
+  font-size: 20px;
+  font-family: "Lato", "Arial", sans-serif;
+}
+
+.btn {
+  padding-top: 10px;
+}
+
+.btn.btn-primary {
+  margin-left: 5px;
+  color: white;
+  background-color: chocolate;
+  border-radius: 60px;
+  border: chocolate !important;
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: rgba(210, 105, 30, 0.884) !important;
+  border: chocolate !important;
+}
+
+table.dashboard {
+  margin-top: 30px;
+  margin-left: 200px;
+  border-spacing: 10px;
+}
+
+thead.dashboard {
+  padding-left: 10px;
+}
+
+td.dashboard {
+  padding-left: 20px;
+}
+
+p.dashboard {
+  font-size: 18px;
+  color: grey;
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+p.dashboard.title {
+  padding-top: 40px;
+}

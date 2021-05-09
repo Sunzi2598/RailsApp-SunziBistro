@@ -1,0 +1,70 @@
+%body
+  %header
+    %nav
+      .nav
+        %img.logo{:alt => "Sunzi Bistro logo", :src => "logo.jpg"}/
+        %h3
+          \  Sunzi
+          %br/
+          \  Bistro
+        %ul.main-nav
+          %li
+            %a{:href => "#home"} Home
+          %li
+            %a{:href => "#about"} About
+          %li
+            %a{:href => "#service"} Service
+          %li
+            %a{:href => "#blog"} Blog
+          %li
+            %a{:href => "#contact"} Contact
+    .description-text-box
+      %h1 Ordering Food
+      %br/
+      %h2
+        \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+        %i.fas.fa-utensils  
+        \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      %p
+        Sunzi Bistro is a well-established restaurant that has been in business for over 10 years.
+        You can easily find this restaurant at the Remedios Circle in Malate because of its wooden
+        door and green roof.
+  .features-bar
+    .dropdown-for-category
+      %button.dropbtn-category
+        Categories
+        %i.fa.fa-caret-down
+      .dropdown-categories
+        %a{:href => "#"} Hamburger
+        %a{:href => "#"} Noodles
+        %a{:href => "#"} Pasta
+        %a{:href => "#"} Pizza
+        %a{:href => "#"} Sweets
+    .dropdown-for-sorting
+      %button.dropbtn-sorting
+        Sorting
+        %i.fa.fa-caret-down
+      .dropdown-sorting
+        %a{:href => "#"} Sort
+    .dropdown-for-vegetarian
+      %button.dropbtn-vegetarian
+        Vegetarian
+        %i.fa.fa-caret-down
+      .dropdown-vegetarian
+        %a{:href => "#"} Noodlles
+    .min-max-slider{"data-legendnum" => "2"}
+      %label{:for => "min"} Minimum price
+      %input#min.min{:max => "150", :min => "0", :name => "min", :step => "1", :type => "range"}/
+      %label{:for => "max"} Maximum price
+      %input#max.max{:max => "150", :min => "0", :name => "max", :step => "1", :type => "range"}/
+      %h6 Price
+  %br/
+  %main.products-list
+    - @products.each do |product|
+      .products 
+        =image_tag product.image
+        .food-title= product.title
+        .food-description= product.description
+        .food-price= product.price 
+        %end
+        

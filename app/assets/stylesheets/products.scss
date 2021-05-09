@@ -1,0 +1,467 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fff;
+  color: #555;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+.nav {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 150%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+  margin-left: 360px;
+}
+
+h3 {
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding-top: 30px;
+  color: white;
+}
+
+h2 {
+  margin-left: 120px;
+  display: inline;
+  font-size: 80%;
+  color: white;
+}
+
+header {
+  background-image: -webkit-linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    image-url("hero.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.425), rgba(0, 0, 0, 0.425)),
+    image-url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  background-attachment: fixed;
+}
+
+.description-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 30%;
+  left: 55%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+  margin-left: 100px;
+  border-radius: 60%;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: -50px;
+  margin-right: 20px;
+  justify-content: space-between;
+  li {
+    display: inline-block;
+    margin-left: 20px;
+    a {
+      &:link {
+        padding: 7px 0;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 60%;
+        border-bottom: 2px solid transparent;
+        -webkit-transition: border-bottom 0.2s;
+        transition: border-bottom 0.2s;
+      }
+      &:visited {
+        padding: 7px 0;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 60%;
+        border-bottom: 2px solid transparent;
+        -webkit-transition: border-bottom 0.2s;
+        transition: border-bottom 0.2s;
+      }
+      &:hover {
+        border-bottom: 2px solid chocolate;
+      }
+      &:active {
+        border-bottom: 2px solid chocolate;
+      }
+    }
+  }
+}
+
+ul.main-nav {
+  li {
+    &:not(:last-child) {
+      &::after {
+        content: "\2022";
+        color: chocolate;
+        font-weight: bold;
+        display: inline-block;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+p {
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 240px;
+  margin-top: 20px;
+}
+
+.features-bar {
+  overflow: hidden;
+  background-color: #f5f5f5;
+  font-family: Lati;
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  a {
+    float: left;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.425);
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    &:hover {
+      background-color: chocolate;
+    }
+  }
+}
+
+.dropdown-for-category {
+  padding-left: 170px;
+  .dropbtn-category {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 0.404);
+    font-weight: bold;
+    padding: 10px 14px 25px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  &:hover {
+    .dropbtn-category {
+      background-color: chocolate;
+    }
+    .dropdown-categories {
+      display: block;
+    }
+  }
+}
+
+.dropdown-for-sorting {
+  float: left;
+  overflow: hidden;
+  padding-left: 10px;
+  .dropbtn-sorting {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 0.404);
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  &:hover {
+    .dropbtn-sorting {
+      background-color: chocolate;
+    }
+    .dropdown-sorting {
+      display: block;
+    }
+  }
+}
+
+.dropdown-for-vegetarian {
+  float: left;
+  overflow: hidden;
+  padding-left: 10px;
+  .dropbtn-vegetarian {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 0.404);
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  &:hover {
+    .dropbtn-vegetarian {
+      background-color: chocolate;
+    }
+    .dropdown-vegetarian {
+      display: block;
+    }
+  }
+}
+
+.dropdown-categories {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+.dropdown-sorting {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+.dropdown-vegetarian {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+.fa {
+  color: rgb(236, 138, 68);
+}
+
+.min-max-slider {
+  position: relative;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-left: 300px;
+  padding-top: 15px;
+  > label {
+    display: none;
+  }
+  > .legend {
+    display: flex;
+    justify-content: space-between;
+    > * {
+      font-size: small;
+      opacity: 0.25;
+    }
+  }
+
+  > input {
+    cursor: pointer;
+    position: absolute;
+    -webkit-appearance: none;
+    outline: none !important;
+    background: transparent;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 30%,
+      rgb(236, 138, 68) 30%,
+      rgb(236, 138, 68) 60%,
+      transparent 60%,
+      transparent 100%
+    );
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      background: #eee;
+      cursor: pointer;
+      border: 1px solid rgb(236, 138, 68);
+      border-radius: 100%;
+    }
+    &::-webkit-slider-runnable-track {
+      cursor: pointer;
+    }
+  }
+}
+
+span.value {
+  height: 1.5em;
+  font-weight: bold;
+  margin-right: 117px;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.404);
+}
+
+span.value.lower {
+  &::before {
+    content: "$";
+    margin-left: -25px;
+    color: rgba(0, 0, 0, 0.404);
+  }
+}
+
+span.value.upper {
+  &::before {
+    content: "$";
+    margin-left: 0.5em;
+    padding-top: 5px;
+    padding-left: 90px;
+    color: rgba(0, 0, 0, 0.404);
+    font-weight: bold;
+  }
+}
+
+h6 {
+  text-align: left;
+  margin-left: -75px;
+  margin-top: -2px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.404);
+  font-weight: bold;
+}
+
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(2, 230px);
+  grid-gap: 50px;
+  justify-items: center;
+  justify-content: center;
+  margin-left: -50px;
+}
+
+.products {
+  text-align: center;
+  padding-top: 20px;
+  img {
+    height: 170px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 50px;
+    border-radius: 15px;
+    &:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+      transition: 0.8s ease-in;
+      border-radius: 10%;
+    }
+  }
+}
+
+.food-title {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding: -0px 40px 0px 40px;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+.food-description {
+  font-size: 14px;
+  text-align: center;
+  color: grey;
+  margin-left: 60px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.food-price {
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(236, 138, 68);
+  font-weight: bold;
+  margin-left: 60px;
+  margin-top: 5px;
+  font-weight: bold;
+}

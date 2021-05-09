@@ -1,0 +1,7 @@
+%h1 Edit Product
+
+= render 'form', product: @product
+
+= link_to 'Back to Dashboard', dashboard_path, class: 'path-new'
+%br
+= link_to 'Show', @product, class: 'path-show'

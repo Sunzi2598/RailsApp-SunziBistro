@@ -1,0 +1,24 @@
+%p#notice= notice
+%h1 Products
+%table.dashboard
+  %thead.dashboard
+    %tr.dashboard
+      %th.dashboard &nbsp &nbsp Title &nbsp &nbsp &nbsp &nbsp
+      %th.dashboard &nbsp Description &nbsp &nbsp &nbsp &nbsp
+      %th.dashboard &nbsp &nbsp Price &nbsp &nbsp &nbsp &nbsp
+      %th.dashboard &nbsp &nbsp Image &nbsp &nbsp &nbsp &nbsp
+      %th.dashboard{:colspan => "3"}
+  %tbody.dashboard
+    - @products.each do |product|
+      %tr
+        %td.dashboard= product.title 
+        %td.dashboard= product.description 
+        %td.dashboard= product.price 
+        %td.dashboard= image_tag product.image, width: '50px', height: '50px' 
+        %td.dashboard= link_to 'Show', product
+        %td.dashboard= link_to 'Edit', edit_product_path(product)
+        %td.dashboard= link_to 'Destroy', product, :method => :delete, data: { confirm: 'Are you sure?' }
+%br
+= link_to 'New Product', new_product_path, class: 'path-new-dashboard'
+%br
+= link_to 'Back to Home', root_path, class: 'path-new-dashboard'
