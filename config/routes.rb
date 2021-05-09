@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  get 'carts/show'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'products#index'
   get '/dashboard', to: 'dashboard#index'
-  
+  get '/signup', to: 'users#new'
+  get '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   resources :products
+  resources :users
 end
