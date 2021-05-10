@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :initialize_session
+  before_action :load_cart
 
   def index
     @products = Product.all
@@ -26,7 +28,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       @product.update(product_params) ? format.html { redirect_to @product, notice: 'Product updated successfully!' }
-                                      : format.html { render :edit }
+                    : format.html { render :edit }
     end
   end
 
@@ -37,6 +39,22 @@ class ProductsController < ApplicationController
     end
   end
 
+  def add_to_cart
+    if logged_in?
+      id = params[:id].to_i
+      session[:cart] << id unless session[:cart].include?(id)
+      redirect_to root_path
+    else
+      redirect_to login_path
+    end
+  end
+
+  def remove_from_cart
+    id = params[:id].to_i
+    session[:cart].delete(id)
+    redirect_to root_path
+  end
+
   private
 
   def set_product
@@ -45,6 +63,16 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:title, :description, :price, :image)
+  end
+
+  private
+
+  def initialize_session
+    session[:cart] ||= [] # Empty cart is an empty array.
+  end
+
+  def load_cart
+    @cart = Product.find(session[:cart])
   end
   
 end

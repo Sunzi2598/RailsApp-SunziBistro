@@ -58,18 +58,30 @@
       .dropdown-vegetarian
         %a{:href => "#"} Noodlles
     .min-max-slider{"data-legendnum" => "2"}
-      %label{:for => "min"} Minimum price
+      %label{:for => "min"} 0$
       %input#min.min{:max => "150", :min => "0", :name => "min", :step => "1", :type => "range"}/
-      %label{:for => "max"} Maximum price
+      %label{:for => "max"} 150$
       %input#max.max{:max => "150", :min => "0", :name => "max", :step => "1", :type => "range"}/
       %h6 Price
   %br/
+  %details
+    %summary
+      .fas.fa-shopping-cart (#{@cart.size})
+    %ul
+      - @cart.each do |cart_item|
+        %li
+          = cart_item.title
+          = cart_item.price 
+          =image_tag cart_item.image, class: 'food-image-cart'
+          = link_to 'x', remove_from_cart_path(cart_item), method: :delete
   %main.products-list
     - @products.each do |product|
       .products 
-        =image_tag product.image
+        =image_tag product.image, class:'food-img'
         .food-title= product.title
         .food-description= product.description
         .food-price= product.price 
+        = button_to 'Add to Cart', add_to_cart_path(product), method: :post, class: 'add abtn abtn-primary'
+        %br
         %end
         
