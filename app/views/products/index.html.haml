@@ -73,7 +73,7 @@
           = cart_item.title
           = cart_item.price 
           =image_tag cart_item.image, class: 'food-image-cart'
-          = link_to 'x', remove_from_cart_path(cart_item), method: :delete
+          = link_to 'x', remove_from_cart_product_path(cart_item), method: :delete
   %main.products-list
     - @products.each do |product|
       .products 
@@ -81,7 +81,7 @@
         .food-title= product.title
         .food-description= product.description
         .food-price= product.price 
-        = button_to 'Add to Cart', add_to_cart_path(product), method: :post, class: 'add abtn abtn-primary'
+        = button_to 'Add to Cart', add_to_cart_product_path(product), method: :post, class: 'add abtn abtn-primary'
         %br
         %end
         

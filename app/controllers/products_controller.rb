@@ -68,7 +68,7 @@ class ProductsController < ApplicationController
   private
 
   def initialize_session
-    session[:cart] ||= [] # Empty cart is an empty array.
+    session[:cart] ||= []
   end
 
   def load_cart
