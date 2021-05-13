@@ -114,3 +114,28 @@ p.dashboard {
 p.dashboard.title {
   padding-top: 40px;
 }
+
+.logo-dashboard {
+  height: 80px;
+  width: auto;
+  float: left;
+  margin-top: -40px;
+  margin-left: 80px;
+  border-radius: 60%;
+}
+
+.products#error_explanation {
+  margin-top: -120px;
+  ul.products {
+    color: chocolate;
+    font-size: 18px;
+    font-family: "Lato", "Arial", sans-serif;
+  }
+}
+
+.products.field_with_errors {
+  @extend .has-error;
+  .dashboard.form-control {
+    color: $state-danger-text;
+  }
+}

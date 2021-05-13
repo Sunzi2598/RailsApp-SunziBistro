@@ -19,38 +19,41 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params.except(:image))
     @product.image.attach(product_params[:image])
 
-    respond_to do |format|
-      @product.save ? format.html { redirect_to @product, notice: 'Product added successfully!' }
-                    : format.html { render :new }
+    if @product.save
+      flash[:success] = 'Product added successfully!'
+      redirect_to @product 
+    else 
+      render 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      @product.update(product_params) ? format.html { redirect_to @product, notice: 'Product updated successfully!' }
-                    : format.html { render :edit }
+    if @product.update(product_params)
+      flash[:success] = 'Product updated successfully!'
+      redirect_to @product 
+    else
+      render 'edit'
     end
   end
 
   def destroy
     @product.destroy
-    respond_to do |format| 
-      format.html { redirect_to dashboard_path, notice: 'Product deleted!' } 
-    end
+    flash[:success] = 'Product deleted!'
+    redirect_to dashboard_path
+  end
+
+  def id
+    @id ||= params[:id].to_i
   end
 
   def add_to_cart
-    if logged_in?
-      id = params[:id].to_i
-      session[:cart] << id unless session[:cart].include?(id)
-      redirect_to root_path
-    else
-      redirect_to login_path
-    end
+    return redirect_to login_path unless logged_in?
+
+    session[:cart] << id unless session[:cart].include?(id)
+    redirect_to root_path
   end
 
   def remove_from_cart
-    id = params[:id].to_i
     session[:cart].delete(id)
     redirect_to root_path
   end
