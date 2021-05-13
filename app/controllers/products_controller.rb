@@ -20,15 +20,21 @@ class ProductsController < ApplicationController
     @product.image.attach(product_params[:image])
 
     respond_to do |format|
-      @product.save ? format.html { redirect_to @product, notice: 'Product added successfully!' }
-                    : format.html { render :new }
+      if @product.save 
+        format.html { redirect_to @product, notice: 'Product added successfully!' }
+      else
+        format.html { render :new }
+      end
     end
   end
 
   def update
     respond_to do |format|
-      @product.update(product_params) ? format.html { redirect_to @product, notice: 'Product updated successfully!' }
-                    : format.html { render :edit }
+      if @product.update(product_params) 
+        format.html { redirect_to @product, notice: 'Product updated successfully!' }
+      else
+        format.html { render :edit }
+      end
     end
   end
 
@@ -46,7 +52,7 @@ class ProductsController < ApplicationController
   def add_to_cart
     return redirect_to login_path unless logged_in?
 
-    session[:cart] << id unless session[:cart].include?(id)
+    session[:cart] << id 
     redirect_to root_path
   end
 
