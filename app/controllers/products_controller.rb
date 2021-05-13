@@ -39,18 +39,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def id
+    @id ||= params[:id].to_i
+  end
+
   def add_to_cart
-    if logged_in?
-      id = params[:id].to_i
-      session[:cart] << id unless session[:cart].include?(id)
-      redirect_to root_path
-    else
-      redirect_to login_path
-    end
+    return redirect_to login_path unless logged_in?
+
+    session[:cart] << id unless session[:cart].include?(id)
+    redirect_to root_path
   end
 
   def remove_from_cart
-    id = params[:id].to_i
     session[:cart].delete(id)
     redirect_to root_path
   end
