@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5.2.1'
 gem 'jbuilder', '~> 2.10.0'
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'jquery-rails', '~> 4.4'
+gem 'cloudinary', '1.20'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
