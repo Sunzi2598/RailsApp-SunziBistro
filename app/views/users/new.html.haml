@@ -1,16 +1,23 @@
 %body.sign-up
   .row
     %img.logo-image{:alt => "Sunzi Bistro logo", :src => "logo.jpg"}/
+
     .col-md-6.col-md-offset-3
       = form_with(model: @user, local: true, class: 'users') do |f|
+
         = render 'shared/error_messages'
+
         = f.label :name
         = f.text_field :name, class: 'users form-control'
+
         = f.label :email
         = f.email_field :email, class: 'users form-control'
+
         = f.label :password
         = f.password_field :password, class: 'users form-control'
+
         = f.label :password_confirmation, "Password Confirmation"
         = f.password_field :password_confirmation, class: 'users form-control'
+        
         = f.submit "Create my account", class: "users btn btn-primary"
         

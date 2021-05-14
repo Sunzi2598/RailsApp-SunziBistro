@@ -1,6 +1,9 @@
 %p#notice= notice
+
 %h1 Products
+
 %img.logo-dashboard{:alt => "Sunzi Bistro logo", :src => "logo.jpg"}/
+
 %table.dashboard
   %thead.dashboard
     %tr.dashboard
@@ -9,6 +12,7 @@
       %th.dashboard &nbsp &nbsp Price &nbsp &nbsp &nbsp &nbsp
       %th.dashboard &nbsp &nbsp Image &nbsp &nbsp &nbsp &nbsp
       %th.dashboard{:colspan => "3"}
+      
   %tbody.dashboard
     - @products.each do |product|
       %tr

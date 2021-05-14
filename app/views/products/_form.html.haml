@@ -7,18 +7,23 @@
       %ul.products
         - product.errors.each do |error|
           %li.products= error.full_message
+
   .field
     = form.label :title, class:'dashboard-label'
     = form.text_field :title, class: 'dashboard form-control'
+
   .field
     = form.label :description, class:'dashboard-label'
     = form.text_field :description, class: 'dashboard form-control'
+
   .field 
     = form.label :price, class:'dashboard-label'
     = form.text_field :price, class: 'dashboard form-control'
+
   .field 
     = form.label :image, class:'dashboard-label'
     = form.file_field :image, class: 'dashboard-image',direct_upload: true
+    
   .actions
     = form.submit 'Create product',  class: 'dashboard btn btn-primary'
     
