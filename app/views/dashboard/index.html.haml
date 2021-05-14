@@ -1,16 +1,20 @@
 %p#notice= notice
 %h1 Products
 %table.dashboard
+
   %thead.dashboard
+
     %tr.dashboard
       %th.dashboard &nbsp &nbsp Title &nbsp &nbsp &nbsp &nbsp
       %th.dashboard &nbsp Description &nbsp &nbsp &nbsp &nbsp
       %th.dashboard &nbsp &nbsp Price &nbsp &nbsp &nbsp &nbsp
       %th.dashboard &nbsp &nbsp Image &nbsp &nbsp &nbsp &nbsp
       %th.dashboard{:colspan => "3"}
+
   %tbody.dashboard
     - @products.each do |product|
-      %tr
+
+      %tr.dashboard
         %td.dashboard= product.title 
         %td.dashboard= product.description 
         %td.dashboard= product.price 

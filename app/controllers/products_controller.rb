@@ -52,12 +52,12 @@ class ProductsController < ApplicationController
   def add_to_cart
     return redirect_to login_path unless logged_in?
 
-    session[:cart] << id 
+    session[:shopping_cart] << id unless session[:shopping_cart].include?(id)
     redirect_to root_path
   end
 
   def remove_from_cart
-    session[:cart].delete(id)
+    session[:shopping_cart].delete(id)
     redirect_to root_path
   end
 
@@ -74,11 +74,11 @@ class ProductsController < ApplicationController
   private
 
   def initialize_session
-    session[:cart] ||= []
+    session[:shopping_cart] ||= []
   end
 
   def load_cart
-    @cart = Product.find(session[:cart])
+    @shopping_cart = Product.find(session[:shopping_cart])
   end
   
 end

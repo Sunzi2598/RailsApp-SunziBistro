@@ -7,6 +7,7 @@
       %ul
         - product.errors.each do |error|
           %li= error.full_message
+          
   .field
     = form.label :title, class:'dashboard-label'
     = form.text_field :title, class: 'dashboard form-control'

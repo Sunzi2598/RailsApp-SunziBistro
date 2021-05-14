@@ -71,9 +71,9 @@
   
   %details
     %summary
-      .fas.fa-shopping-cart (#{@cart.size})
+      .fas.fa-shopping-cart (#{@shopping_cart.size})
     %ul
-      - @cart.each do |cart_item|
+      - @shopping_cart.each do |cart_item|
         %li
           = cart_item.title
           = cart_item.price 
