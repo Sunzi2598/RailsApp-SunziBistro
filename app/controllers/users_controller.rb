@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to Sunzi Bistro Website!"
+      flash[:success] = 'Welcome to Sunzi Bistro Website!'
+
       redirect_to @user
     else
       render 'new'

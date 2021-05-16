@@ -19,29 +19,31 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params.except(:image))
     @product.image.attach(product_params[:image])
 
-    respond_to do |format|
-      if @product.save 
-        format.html { redirect_to @product, notice: 'Product added successfully!' }
-      else
-        format.html { render :new }
-      end
+    if @product.save
+      flash[:success] = 'Product added successfully!'
+
+      redirect_to @product 
     end
   end
 
   def update
     respond_to do |format|
-      if @product.update(product_params) 
-        format.html { redirect_to @product, notice: 'Product updated successfully!' }
-      else
-        format.html { render :edit }
-      end
-    end
+      if @product.update(product_params)
+       flash[:success] = 'Product updated successfully!'
+       
+       redirect_to @product 
+     else
+       render 'edit'
+     end
+   end
   end
 
   def destroy
     @product.destroy
     respond_to do |format| 
-      format.html { redirect_to dashboard_path, notice: 'Product deleted!' } 
+      flash[:success] = 'Product deleted!'
+
+      redirect_to dashboard_path
     end
   end
 
@@ -53,11 +55,13 @@ class ProductsController < ApplicationController
     return redirect_to login_path unless logged_in?
 
     session[:shopping_cart] << id unless session[:shopping_cart].include?(id)
+
     redirect_to root_path
   end
 
   def remove_from_cart
     session[:shopping_cart].delete(id)
+
     redirect_to root_path
   end
 
