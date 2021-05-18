@@ -18,11 +18,13 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap-social-rails', '~> 4.12'
+gem 'dotenv-rails','2.7.6'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4.2'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'byebug', '~> 11.1', '>= 11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '5.0.1'
 end
 
 group :development do

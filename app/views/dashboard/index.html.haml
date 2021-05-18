@@ -22,7 +22,7 @@
         %td.dashboard= product.title 
         %td.dashboard= product.description 
         %td.dashboard= product.price 
-        %td.dashboard= image_tag product.image, width: '50px', height: '50px' 
+        %td.dashboard= cl_image_tag product.image.key , width: '50px', height: '50px' 
         %td.dashboard= link_to 'Show', product
         %td.dashboard= link_to 'Edit', edit_product_path(product)
         %td.dashboard= link_to 'Destroy', product, :method => :delete, data: { confirm: 'Are you sure?' }

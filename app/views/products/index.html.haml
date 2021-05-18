@@ -77,14 +77,14 @@
         %li
           = cart_item.title
           = cart_item.price 
-          =image_tag cart_item.image, class: 'food-image-cart'
+          =cl_image_tag cart_item.image.key, class: 'food-image-cart'
           = link_to 'x', remove_from_cart_product_path(cart_item), method: :delete
       %h3.total= "Total: #{ total_price(@shopping_cart) } $"
 
   %main.products-list
     - @products.each do |product|
       .products 
-        =image_tag product.image, class:'food-img'
+        =cl_image_tag product.image.key, class:'food-img'
         .food-title= product.title
         .food-description= product.description
         .food-price= "$#{product.price}"

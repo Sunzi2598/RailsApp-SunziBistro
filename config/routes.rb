@@ -4,14 +4,13 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new'
   get '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  post '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  resources :products do
+  resources :products, only: %i[new create destroy edit update show index] do
     post :add_to_cart, on: :member
     delete :remove_from_cart, on: :member
   end
-  
-  resources :products
+
   resources :users
 end

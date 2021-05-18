@@ -1,21 +1,14 @@
 ---
 development:
-  cloud_name: db3kljtw9
-  api_key: "932935994286465"
-  api_secret: wyze4QdaUwsDzzXNjXkiClskBbs
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_file_support: false
 
 production:
-  cloud_name: db3kljtw9
-  api_key: "932935994286465"
-  api_secret: wyze4QdaUwsDzzXNjXkiClskBbs
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_file_support: true
-
-test:
-  cloud_name: db3kljtw9
-  api_key: "932935994286465"
-  api_secret: wyze4QdaUwsDzzXNjXkiClskBbs
-  enhance_image_tag: true
-  static_file_support: false
