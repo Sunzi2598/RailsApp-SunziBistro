@@ -1,0 +1,117 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding-top: 10px;
+}
+
+.btn.btn-primary {
+  margin-left: 5px;
+  color: white;
+  background-color: chocolate;
+  border-radius: 60px;
+  border: chocolate !important;
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: rgba(210, 105, 30, 0.884) !important;
+  border: chocolate !important;
+}
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+
+  h1.users {
+    margin-left: 40px;
+    padding-top: 50px;
+  }
+
+  h1.show {
+    font-size: 20px;
+    margin-left: 35px;
+    margin-top: -13px;
+    color: chocolate;
+    font-family: "Lato", "Arial", sans-serif;
+    font-weight: bold;
+    align-items: left;
+    white-space: nowrap;
+    text-transform: capitalize;
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+body.sign-up {
+  padding-top: 110px;
+}
+
+input.users,
+textarea.users,
+select.users,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input.users {
+  height: auto !important;
+}
+
+.users#error_explanation {
+  margin-top: -90px;
+  ul.users {
+    color: chocolate;
+    margin: 0 0 30px 0;
+  }
+  li.users {
+    text-decoration: none;
+  }
+}
+
+.users.field_with_errors {
+  @extend .has-error;
+  .users.form-control {
+    color: $state-danger-text;
+  }
+}
+
+.users.btn.btn-primary {
+  margin-right: 100px;
+}
+
+.logo-image {
+  height: 80px;
+  width: auto;
+  float: left;
+  margin-top: -90px;
+  margin-left: 80px;
+  border-radius: 60%;
+}
+
+.path {
+  font-size: 15px;
+  padding-left: 60px;
+  font-family: "Lato", "Arial", sans-serif;
+}

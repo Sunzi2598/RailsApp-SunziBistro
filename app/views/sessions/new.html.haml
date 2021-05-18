@@ -1,0 +1,25 @@
+- provide(:title, 'Log in')
+
+%h1.session Log in
+
+%body.session
+  .row
+    %img.logo-image{:alt => 'Sunzi Bistro logo', :src => 'logo.jpg'}/
+
+    .col-md-6.col-md-offset-3
+      = form_with(url: login_path, scope: :session, local: true) do |f|
+      
+        = f.label :email
+        = f.email_field :email, class: 'session form-control'
+
+        = f.label :password
+        = f.password_field :password, class: 'session form-control'
+
+        = f.label :remember_me, class: 'session checkbox inline' do
+          = f.check_box :remember_me
+          %span.session Remember me on this computer
+
+        = f.submit 'Log in', class: 'session btn btn-primary'
+  %p
+    New user? #{link_to 'Sign up now!', signup_path}
+  = link_to 'Go Back!', root_path, class: 'path-log-in'

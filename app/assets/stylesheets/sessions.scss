@@ -1,0 +1,67 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.session {
+  padding-top: 110px;
+}
+
+input.session,
+textarea.session,
+select.session,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input.session {
+  height: auto !important;
+}
+
+.session.btn.btn-primary {
+  padding-top: 10px;
+}
+
+.path-log-in {
+  padding-left: 595px;
+  padding-left: 600px;
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+}
+
+.session.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span.session {
+    margin-left: 20px;
+    font-weight: normal;
+    font-family: "Lato", "Arial", sans-serif;
+    font-size: 15px;
+    margin-top: -5px;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.session.btn.btn-primary {
+  margin-left: 0px;
+  color: white;
+  background-color: chocolate;
+  border-radius: 60px;
+  border: chocolate !important;
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}

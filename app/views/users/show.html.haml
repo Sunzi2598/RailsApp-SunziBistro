@@ -1,0 +1,10 @@
+- provide(:title, @user.name)
+.row
+  %aside.col-md-4
+    %section.user_info
+      %h1.users
+        = gravatar_for @user
+        %h1.show
+          = @user.name
+
+= link_to 'BACK', root_path, class: 'path'

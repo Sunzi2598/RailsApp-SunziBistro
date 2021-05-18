@@ -1,20 +1,28 @@
 %p#notice= notice
+
 %h1 Products
+
+%img.logo-dashboard{:alt => "Sunzi Bistro logo", :src => "logo.jpg"}/
+
 %table.dashboard
+
   %thead.dashboard
+
     %tr.dashboard
       %th.dashboard &nbsp &nbsp Title &nbsp &nbsp &nbsp &nbsp
       %th.dashboard &nbsp Description &nbsp &nbsp &nbsp &nbsp
       %th.dashboard &nbsp &nbsp Price &nbsp &nbsp &nbsp &nbsp
       %th.dashboard &nbsp &nbsp Image &nbsp &nbsp &nbsp &nbsp
       %th.dashboard{:colspan => "3"}
+
   %tbody.dashboard
     - @products.each do |product|
-      %tr
+
+      %tr.dashboard
         %td.dashboard= product.title 
         %td.dashboard= product.description 
         %td.dashboard= product.price 
-        %td.dashboard= image_tag product.image, width: '50px', height: '50px' 
+        %td.dashboard= cl_image_tag product.image.key , width: '50px', height: '50px' 
         %td.dashboard= link_to 'Show', product
         %td.dashboard= link_to 'Edit', edit_product_path(product)
         %td.dashboard= link_to 'Destroy', product, :method => :delete, data: { confirm: 'Are you sure?' }
