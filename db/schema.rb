@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2021_05_12_070449) do
+ActiveRecord::Schema.define(version: 2021_05_19_070339) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -28,19 +28,6 @@ ActiveRecord::Schema.define(version: 2021_05_12_070449) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "line_items", force: :cascade do |t|
-    t.integer "quantity"
-    t.integer "product_id"
-    t.integer "cart_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -56,6 +43,9 @@ ActiveRecord::Schema.define(version: 2021_05_12_070449) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
