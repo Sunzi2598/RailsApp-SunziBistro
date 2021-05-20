@@ -29,6 +29,10 @@ Rails.application.configure do
 
   config.active_support.disallowed_deprecation = :log
 
+  config.serve_static_assets = true
+  config.public_file_server.enabled = true
+  config.assets.compile = true
+
   config.active_support.disallowed_deprecation_warnings = []
 
   config.log_formatter = ::Logger::Formatter.new
