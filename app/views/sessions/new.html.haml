@@ -1,6 +1,6 @@
 - provide(:title, 'Log in')
 
-%h1.session Log in
+%h1.session LOGIN
 
 %body.session
   .row
@@ -13,6 +13,7 @@
         = f.email_field :email, class: 'session form-control'
 
         = f.label :password
+        = link_to "(forgot password)", new_password_reset_path, class: 'forgot'
         = f.password_field :password, class: 'session form-control'
 
         = f.label :remember_me, class: 'session checkbox inline' do

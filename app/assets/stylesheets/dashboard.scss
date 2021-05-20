@@ -102,14 +102,17 @@ td.dashboard {
 }
 
 p.dashboard {
-  font-size: 18px;
-  color: grey;
-  font-weight: bold;
+  font-size: 20px;
   padding-left: 30px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: capitalize;
 }
 
 p.dashboard.title {
-  padding-top: 40px;
+  margin-top: -20px;
 }
 
 .logo-dashboard {
@@ -118,6 +121,22 @@ p.dashboard.title {
   float: left;
   margin-top: -40px;
   margin-left: 80px;
+  border-radius: 60%;
+}
+
+.logo-new {
+  height: 80px;
+  width: auto;
+  margin-top: -10px;
+  margin-left: 80px;
+  border-radius: 60%;
+}
+
+.logo-show {
+  height: 80px;
+  width: auto;
+  margin-top: 40px;
+  margin-left: 140px;
   border-radius: 60%;
 }
 
@@ -135,4 +154,17 @@ p.dashboard.title {
   .dashboard.form-control {
     color: $state-danger-text;
   }
+}
+
+h1.dashboard {
+  padding-top: 30px;
+  font-size: 40px;
+  margin-left: 500px;
+  margin-bottom: -30px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
 }
