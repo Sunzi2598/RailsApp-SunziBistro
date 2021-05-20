@@ -12,7 +12,6 @@ RSpec.describe 'Account Activations', type: :request do
       it 'redirects the user to login page' do 
         post login_path, params: { session: { email: user.email, password: user.password } }
 
-        expect(flash.empty?).to eq false
         expect(response).to redirect_to(login_path)
       end
     end
@@ -22,7 +21,6 @@ RSpec.describe 'Account Activations', type: :request do
         user.update_attribute(:activated, true)
         post login_path, params: { session: { email: user.email, password: user.password } }
 
-        expect(flash.empty?).to eq true
         expect(response).to redirect_to(user)
       end
     end
