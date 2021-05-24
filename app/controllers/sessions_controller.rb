@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
 
         redirect_to(user)
       else 
-        message = "Account not activated. "
-        message += "Check your email for the activation link." 
+        message = 'Account not activated. '
+        message += 'Check your email for the activation link.'
         flash[:warning] = message
 
         redirect_to(login_path)

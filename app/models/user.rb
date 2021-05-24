@@ -34,6 +34,7 @@ class User < ApplicationRecord
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
     return false if digest.nil? 
+    
     BCrypt::Password.new(digest).is_password?(token)
   end
 
@@ -67,7 +68,7 @@ class User < ApplicationRecord
   private
 
   def downcase_email
-    self.email = email.downcase
+    email.downcase!
   end
     
   def create_activation_digest
