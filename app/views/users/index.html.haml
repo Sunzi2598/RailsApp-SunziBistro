@@ -1,0 +1,12 @@
+- provide(:title, 'All users')
+
+%h1.all All users
+= will_paginate
+
+%img.logo-image{:alt => 'Sunzi Bistro logo', :src => '/assets/logo.jpg'}/
+
+%ul.users-index
+  = render @users
+  = will_paginate
+
+= link_to 'Go Back!', root_path, class: 'btn btn-primary path-edit-user'

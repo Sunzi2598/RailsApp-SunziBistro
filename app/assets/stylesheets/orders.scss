@@ -1,0 +1,58 @@
+.deliver {
+  margin-left: 0px;
+  color: white;
+  background-color: chocolate;
+  border-radius: 60px;
+  border: chocolate !important;
+  font-size: 18px;
+  font-family: "Lato", "Arial", sans-serif;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+  margin-bottom: 20px;
+}
+
+h1.orders {
+  padding-top: 30px;
+  font-size: 40px;
+  margin-left: 200px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+ul.orders {
+  list-style: none;
+  padding-left: 180px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+div.orders {
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.btn.btn-primary.path-orders {
+  margin-left: 190px;
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  margin-bottom: 20px;
+}
+
+.logo-order {
+  height: 80px;
+  width: auto;
+  float: left;
+  margin-left: 40px;
+  border-radius: 60%;
+  margin-top: -70px;
+}

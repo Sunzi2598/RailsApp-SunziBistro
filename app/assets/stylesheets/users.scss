@@ -55,6 +55,7 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .gravatar_edit {
@@ -110,8 +111,56 @@ input.users {
   border-radius: 60%;
 }
 
-.path {
+.btn.btn-primary.path-profile {
   font-size: 15px;
-  padding-left: 60px;
+  margin-left: 35px;
   font-family: "Lato", "Arial", sans-serif;
+  background-color: chocolate;
+  color: white;
+  margin-top: 10px;
+}
+
+ul.users-index {
+  list-style: none;
+  padding-left: 450px;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    padding-left: 40px;
+  }
+}
+
+li.user-gravatar {
+  padding-left: 400px;
+  padding-top: 20px;
+  list-style: none;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h1.update-profile {
+  padding-top: 40px;
+  font-size: 40px;
+  margin-left: 450px;
+  margin-bottom: 20px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+h1.all {
+  padding-top: 60px;
+  font-size: 40px;
+  margin-left: 530px;
+  margin-bottom: 20px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
 }

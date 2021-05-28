@@ -29,11 +29,29 @@ input.session {
   padding-top: 10px;
 }
 
-.path-log-in {
-  padding-left: 595px;
-  padding-left: 600px;
+.btn.btn-primary.path-log-in {
+  margin-left: 595px;
   font-size: 15px;
   font-family: "Lato", "Arial", sans-serif;
+  background-color: chocolate;
+  color: white;
+}
+
+.btn.btn-primary.path-signup {
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  background-color: chocolate;
+  color: white;
+}
+
+.btn.btn-primary.path-edit-user {
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  margin-left: 595px;
+  background-color: chocolate;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .session.checkbox {

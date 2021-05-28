@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token , :reset_token
  
+  has_one :cart
+  has_many :orders
+
   before_save :downcase_email
   before_create :create_activation_digest
 
@@ -8,7 +11,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: URI::MailTo::EMAIL_REGEXP },
                     uniqueness: true
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_secure_password
   

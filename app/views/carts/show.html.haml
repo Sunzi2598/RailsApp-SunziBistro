@@ -1,0 +1,33 @@
+%h1.shoppingcart-title Your Shopping Cart
+
+%img.logo-cart{:alt => 'Sunzi Bistro logo', :src => 'logo.jpg'}  
+
+%ul.shoppingcart-ul
+  - @order_items.each do |item|
+    %div.shoppingcart
+      .shoppingcart-product-title=item.product.title
+      %br
+      
+      =cl_image_tag item.product.image.key, class: 'shoppingcart-image'
+      %br
+
+      Price: $#{item.product.price}
+      %br
+
+      .shoppingcart-quantity
+        ="Quantity: #{item.quantity}"
+        =button_to '+', add_quantity_order_item_path(id: item), method: :patch, class:'addButton'
+        =button_to '-', reduce_quantity_order_item_path(id: item), method: :patch, class: 'reduceButton'
+      %br
+        
+        =link_to 'Remove Item', item, method: :delete, class: 'btn btn-danger btn-sm'
+
+%div.totalprice 
+  ="Total: #{@order_items.to_a.sum { |item| item.total_price }} $"
+  %br
+
+  =link_to 'Empty Cart', cart_destroy_path(current_user.cart), method: :delete, class: 'btn btn-danger btn-sm-empty'
+  %br
+
+  =link_to 'Place your order', orders_path, method: :post, class: 'btn btn-danger btn-sm-place'
+  =link_to 'Go Back!', root_path, class: 'btn btn-primary path-cart'

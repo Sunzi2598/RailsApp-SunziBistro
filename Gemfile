@@ -19,6 +19,8 @@ gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap-social-rails', '~> 4.12'
 gem 'dotenv-rails','2.7.6'
+gem 'faker', '~> 2.18'
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4.2'
