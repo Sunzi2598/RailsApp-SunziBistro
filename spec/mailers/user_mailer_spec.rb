@@ -1,12 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UserMailer, type: :mailer do
-  let!(:user) { User.create(name: 'Sunzuiana Alexandra',
-                            email: 'sunzuianaalexandra@gmail.com', 
-                            password: 'ratusca',
-                            password_confirmation: 'ratusca',
-                            activation_token: User.new_token,
-                            reset_token: User.new_token) }
+  let(:user) { create(:user) }
 
   describe 'account_activation' do
     let(:mail) { UserMailer.account_activation(user) }
