@@ -1,12 +1,9 @@
 require 'rails_helper'
+require 'factories'
 
 RSpec.describe 'Account Activations', type: :request do
   describe 'GET root_url' do 
-    let!(:user) { User.create(name: 'Sunzuiana Alexandra',
-                            email: 'sunzuianaalexandra@gmail.com', 
-                            password: 'ratusca',
-                            password_confirmation: 'ratusca',
-                            activated: false) }
+    let(:user) { create(:user) }
 
     context 'when account is not activated' do 
       it 'redirects the user to login page' do 

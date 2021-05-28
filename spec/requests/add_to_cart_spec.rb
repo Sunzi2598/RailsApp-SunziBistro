@@ -1,8 +1,9 @@
 require 'rails_helper'
+require 'factories'
 
 RSpec.describe 'Products', type: :request do
   describe 'POST /add_to_cart' do 
-    let!(:product) { Product.create(title: 'Pizza Salami', description: 'Pizza', price: 12.0) }
+    let(:product) { create(:product) }
 
     context 'when user is not logged in' do 
       it 'redirects him to login page' do 
