@@ -2,27 +2,27 @@ class OrdersController < ApplicationController
   before_action :admin_user, only: [:index, :deliver_order]
 
   def index
-    @orders = Order.all
+    @orders = Order.paginate(page: params[:page], per_page: 7)
   end
 
   def create
-    order = current_user.orders.build
+    @order = current_user.orders.new
     @cart = Cart.find_or_create_by!(user_id: current_user.id)
     
-    @cart.order_items.each do | product |
-      order.order_details.build(product_id: product.product_id, quantity: product.quantity)
+    @cart.order_items.each do | item |
+      @order.order_details.new(product_id: item.product_id, quantity: item.quantity)
     end
 
-    order.save
+    @order.save
     @cart.destroy
 
     redirect_to(root_path)
   end
 
   def deliver_order
-    order = Order.find(params[:id])
-    order.toggle(:handled)
-    order.save
+    @order = Order.find(params[:id])
+    @order.toggle(:handled)
+    @order.save
 
     redirect_to(orders_path)
   end

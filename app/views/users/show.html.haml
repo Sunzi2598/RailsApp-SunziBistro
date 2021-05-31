@@ -6,5 +6,24 @@
         = gravatar_for @user
         %h1.show
           = @user.name
+        %h1.orders-user 
+          = @user.name + "'s" + ' Orders'
+    = link_to 'Go Shopping!', root_path, class: 'btn btn-primary path-profile'
 
-= link_to 'Go Back!', root_path, class: 'btn btn-primary path-profile'
+    %br
+    - if @user.orders.empty?
+      %h3.orders-user No orders
+    - else 
+      %ul.orders-user
+      - @user.orders.each do |order|
+        %div.orders-user
+          Name: #{order.user.name}
+          %br
+
+          Date: #{order.created_at}
+          %br
+
+          Placed: #{order.handled?}
+          %br
+        %br
+        %br

@@ -164,3 +164,45 @@ h1.all {
   white-space: nowrap;
   text-transform: capitalize;
 }
+
+h1.orders-user {
+  margin-top: -30px;
+  font-size: 40px;
+  margin-left: 400px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+h3.orders-user {
+  font-size: 20px;
+  margin-left: 500px;
+  margin-bottom: 20px;
+  margin-top: -50px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+ul.orders-user {
+  list-style: none;
+  margin-left: 180px;
+}
+
+div.orders-user {
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-size: 18px;
+  padding-left: 400px;
+  margin-top: -50px;
+}

@@ -3,6 +3,7 @@
 %img.logo-order{:alt => 'Sunzi Bistro logo', :src => 'logo.jpg'}
 
 %ul.orders
+  = will_paginate
   - @orders.each do |order|
     %div.orders
       Name: #{order.user.name}
@@ -12,10 +13,12 @@
       %br
 
       Placed: #{order.handled?}
+
     
     -if order.handled?
       = button_to '  Undeliver order  ', deliver_order_order_path(order), method: :patch, class: 'deliver'
     - else
       = button_to '  Deliver order  ', deliver_order_order_path(order), method: :patch, class: 'deliver'
+  = will_paginate
 
 = link_to 'Go Back!', root_path, class: 'btn btn-primary path-orders'
