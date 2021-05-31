@@ -27,6 +27,8 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'byebug', '~> 11.1', '>= 11.1.3', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '5.0.1'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
 end
 
 group :development do
