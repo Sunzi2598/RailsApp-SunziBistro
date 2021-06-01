@@ -65,3 +65,17 @@ input.session {
   -webkit-transition: border-bottom 0.2s;
   transition: border-bottom 0.2s;
 }
+
+h1.session {
+  padding-top: -10px;
+  font-size: 40px;
+  margin-left: 550px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
+}

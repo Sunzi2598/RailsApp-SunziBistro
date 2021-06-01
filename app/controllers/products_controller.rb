@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:success] = 'Product added successfully!'
 
-      redirect_to @product 
+      redirect_to(@product)
     end
   end
 
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
       if @product.update(product_params)
        flash[:success] = 'Product updated successfully!'
        
-       redirect_to @product 
+       redirect_to(@product)
      else
        render 'edit'
      end
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
     respond_to do |format| 
       flash[:success] = 'Product deleted!'
 
-      redirect_to dashboard_path
+      redirect_to(dashboard_path)
     end
   end
 
@@ -52,17 +52,17 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    return redirect_to login_path unless logged_in?
+    return redirect_to(login_path) unless logged_in?
 
     session[:shopping_cart] << id unless session[:shopping_cart].include?(id)
 
-    redirect_to root_path
+    redirect_to(root_path)
   end
 
   def remove_from_cart
     session[:shopping_cart].delete(id)
 
-    redirect_to root_path
+    redirect_to(root_path)
   end
 
   private

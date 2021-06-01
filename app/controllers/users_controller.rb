@@ -11,10 +11,10 @@ class UsersController < ApplicationController
     @user = User.new user_params
     
     if @user.save
-      log_in @user
-      flash[:success] = 'Welcome to Sunzi Bistro Website!'
-
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = 'Please check your email to activate your account."'
+      
+      redirect_to(login_path)
     else
       render 'new'
     end
