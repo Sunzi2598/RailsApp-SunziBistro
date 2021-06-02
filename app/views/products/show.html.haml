@@ -1,5 +1,7 @@
 %p#notice= notice
 
+%img.logo-show{:alt => 'Sunzi Bistro logo', :src => '/assets/logo.jpg'}/
+
 %p.dashboard.title
   %strong Title:
   = @product.title
@@ -16,6 +18,6 @@
   %strong Image: 
   = cl_image_tag @product.image.key, width: '200px', height: '270px' 
 
-= link_to 'Edit Product', edit_product_path(@product), class: 'path-edit'
+= link_to 'Edit Product', edit_product_path(@product), class: 'btn btn-primary path-edit'
 %br
-= link_to 'Back to Dashboard', dashboard_path, class:'path-edit'
+= link_to 'Back to Dashboard', dashboard_path, class:'btn btn-primary path-edit'

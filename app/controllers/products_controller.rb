@@ -1,7 +1,5 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :initialize_session
-  before_action :load_cart
 
   def index
     @products = Product.all
@@ -22,7 +20,7 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:success] = 'Product added successfully!'
 
-      redirect_to @product 
+      redirect_to(@product)
     end
   end
 
@@ -31,7 +29,7 @@ class ProductsController < ApplicationController
       if @product.update(product_params)
        flash[:success] = 'Product updated successfully!'
        
-       redirect_to @product 
+       redirect_to(@product)
      else
        render 'edit'
      end
@@ -39,50 +37,24 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    respond_to do |format| 
-      flash[:success] = 'Product deleted!'
+    @product = Product.find(params[:id]).destroy
+    flash[:success] = 'Product deleted!'
 
-      redirect_to dashboard_path
-    end
-  end
-
-  def id
-    @id ||= params[:id].to_i
-  end
-
-  def add_to_cart
-    return redirect_to login_path unless logged_in?
-
-    session[:shopping_cart] << id unless session[:shopping_cart].include?(id)
-
-    redirect_to root_path
-  end
-
-  def remove_from_cart
-    session[:shopping_cart].delete(id)
-
-    redirect_to root_path
+    redirect_to(dashboard_path)
   end
 
   private
-
-  def set_product
-    @product = Product.find(params[:id])
-  end
 
   def product_params
     params.require(:product).permit(:title, :description, :price, :image)
   end
 
-  private
-
-  def initialize_session
-    session[:shopping_cart] ||= []
+  def set_product
+    @product = Product.find(params[:id])
   end
 
-  def load_cart
-    @shopping_cart = Product.find(session[:shopping_cart])
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
   
 end

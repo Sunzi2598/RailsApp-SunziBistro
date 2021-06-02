@@ -29,11 +29,37 @@ input.session {
   padding-top: 10px;
 }
 
-.path-log-in {
-  padding-left: 595px;
-  padding-left: 600px;
+.btn.btn-primary.path-log-in {
+  margin-left: 589px;
   font-size: 15px;
   font-family: "Lato", "Arial", sans-serif;
+  background-color: chocolate;
+  color: white;
+}
+
+.btn.btn-primary.path-log-in-back {
+  margin-left: 585px;
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  background-color: chocolate;
+  color: white;
+}
+
+.btn.btn-primary.path-signup {
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  background-color: chocolate;
+  color: white;
+}
+
+.btn.btn-primary.path-edit-user {
+  font-size: 15px;
+  font-family: "Lato", "Arial", sans-serif;
+  margin-left: 595px;
+  background-color: chocolate;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .session.checkbox {
@@ -64,4 +90,18 @@ input.session {
   border-bottom: 2px solid transparent;
   -webkit-transition: border-bottom 0.2s;
   transition: border-bottom 0.2s;
+}
+
+h1.session {
+  padding-top: -10px;
+  font-size: 40px;
+  margin-left: 550px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
 }

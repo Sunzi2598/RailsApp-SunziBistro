@@ -8,21 +8,18 @@
           %br/
           \  Bistro
         %ul.main-nav
-          %li
-            %a{:href => "#home"} Home
-          %li
-            %a{:href => "#about"} About
-          %li
-            %a{:href => "#service"} Service
-          %li
-            %a{:href => "#blog"} Blog
-          %li
-            %a{:href => "#contact"} Contact
           - if logged_in?
+            - if current_user.admin?
+              %li= link_to 'Dashboard', dashboard_path
+              %li= link_to 'Orders', orders_path
+              %li= link_to 'Users', users_path
+            %li= link_to 'My Orders', current_user
+            %li= link_to 'Settings', edit_user_path(current_user)
             %li= link_to 'Log out', logout_path, method: :delete 
+            = link_to '', cart_path, class: 'fas fa-shopping-cart'
           - else 
             %li= link_to 'Log in', login_path
-            = link_to "Sign up", signup_path, class: "btn btn-primary"
+            %li= link_to 'Sign up', signup_path
     
     .description-text-box
       %h1 Ordering Food
@@ -69,18 +66,6 @@
   
   %br/
   
-  %details
-    %summary
-      .fas.fa-shopping-cart (#{@shopping_cart.size})
-    %ul
-      - @shopping_cart.each do |cart_item|
-        %li
-          = cart_item.title
-          = cart_item.price 
-          =cl_image_tag cart_item.image.key, class: 'food-image-cart'
-          = link_to 'x', remove_from_cart_product_path(cart_item), method: :delete
-      %h3.total= "Total: #{ total_price(@shopping_cart) } $"
-
   %main.products-list
     - @products.each do |product|
       .products 
@@ -88,7 +73,7 @@
         .food-title= product.title
         .food-description= product.description
         .food-price= "$#{product.price}"
-        = button_to 'Add to Cart', add_to_cart_product_path(product), method: :post, class: 'add abtn abtn-primary'
+        = button_to 'Add to Cart', "/order_items/#{product.id}", method: 'post', class: 'add abtn abtn-primary'
         %br
         %end
-        
+      

@@ -23,10 +23,10 @@
         %td.dashboard= product.description 
         %td.dashboard= product.price 
         %td.dashboard= cl_image_tag product.image.key , width: '50px', height: '50px' 
-        %td.dashboard= link_to 'Show', product
-        %td.dashboard= link_to 'Edit', edit_product_path(product)
-        %td.dashboard= link_to 'Destroy', product, :method => :delete, data: { confirm: 'Are you sure?' }
+        %td.dashboard= link_to 'Show', product, class: 'btn btn-primary show'
+        %td.dashboard= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary edit'
+        %td.dashboard= link_to 'Destroy', product, :method => :delete,  class: 'btn btn-primary delete', data: { confirm: 'Are you sure?' }
 %br
-= link_to 'New Product', new_product_path, class: 'path-new-dashboard'
+= link_to 'New Product', new_product_path, class: 'btn btn-primary path-new-dashboard'
 %br
-= link_to 'Back to Home', root_path, class: 'path-new-dashboard'
+= link_to 'Back to Home', root_path, class: 'btn btn-primary path-new-dashboard'

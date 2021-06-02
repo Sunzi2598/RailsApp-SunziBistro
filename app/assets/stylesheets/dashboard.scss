@@ -23,7 +23,6 @@ input.dashboard {
 }
 
 .dashboard.btn.btn-primary {
-  width: 200px;
   padding-top: 10px;
   font-size: 15px;
   font-family: "Lato", "Arial", sans-serif;
@@ -39,30 +38,43 @@ input.dashboard {
   margin-bottom: 20px;
 }
 
-.path-new {
-  padding-left: 460px;
-  font-size: 20px;
+.btn.btn-primary.path-new {
+  margin-left: 580px;
+  margin-top: 10px;
+  font-size: 15px;
   font-family: "Lato", "Arial", sans-serif;
   margin-right: 20px;
+  color: white;
+  background-color: chocolate;
 }
 
-.path-new-dashboard {
-  padding-left: 560px;
-  font-size: 20px;
+.btn.btn-primary.path-new-dashboard {
+  margin-left: 560px;
+  font-size: 15px;
   font-family: "Lato", "Arial", sans-serif;
   margin-right: 20px;
+  color: white;
+  margin-top: 20px;
+  background-color: chocolate;
 }
 
-.path-show {
-  padding-left: 460px;
-  font-size: 20px;
+.btn.btn-primary.path-show {
+  margin-left: 600px;
+  font-size: 15px;
   font-family: "Lato", "Arial", sans-serif;
+  color: white;
+  background-color: chocolate;
+  margin-top: 20px;
 }
 
-.path-edit {
-  padding-left: 530px;
-  font-size: 20px;
+.btn.btn-primary.path-edit {
+  margin-left: 530px;
+  font-size: 15px;
   font-family: "Lato", "Arial", sans-serif;
+  color: white;
+  background-color: chocolate;
+  margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 .btn {
@@ -102,14 +114,17 @@ td.dashboard {
 }
 
 p.dashboard {
-  font-size: 18px;
-  color: grey;
-  font-weight: bold;
+  font-size: 20px;
   padding-left: 30px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: capitalize;
 }
 
 p.dashboard.title {
-  padding-top: 40px;
+  margin-top: -30px;
 }
 
 .logo-dashboard {
@@ -118,6 +133,22 @@ p.dashboard.title {
   float: left;
   margin-top: -40px;
   margin-left: 80px;
+  border-radius: 60%;
+}
+
+.logo-new {
+  height: 80px;
+  width: auto;
+  margin-top: -10px;
+  margin-left: 80px;
+  border-radius: 60%;
+}
+
+.logo-show {
+  height: 80px;
+  width: auto;
+  margin-top: 40px;
+  margin-left: 140px;
   border-radius: 60%;
 }
 
@@ -135,4 +166,17 @@ p.dashboard.title {
   .dashboard.form-control {
     color: $state-danger-text;
   }
+}
+
+h1.dashboard {
+  padding-top: 30px;
+  font-size: 40px;
+  margin-left: 500px;
+  margin-bottom: -30px;
+  color: chocolate;
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: bold;
+  align-items: left;
+  white-space: nowrap;
+  text-transform: capitalize;
 }

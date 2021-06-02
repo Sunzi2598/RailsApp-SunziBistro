@@ -1,6 +1,6 @@
 - provide(:title, 'Log in')
 
-%h1.session Log in
+%h1.session LOGIN
 
 %body.session
   .row
@@ -13,6 +13,7 @@
         = f.email_field :email, class: 'session form-control'
 
         = f.label :password
+        = link_to "(forgot password)", new_password_reset_path, class: 'forgot'
         = f.password_field :password, class: 'session form-control'
 
         = f.label :remember_me, class: 'session checkbox inline' do
@@ -21,5 +22,5 @@
 
         = f.submit 'Log in', class: 'session btn btn-primary'
   %p
-    New user? #{link_to 'Sign up now!', signup_path}
-  = link_to 'Go Back!', root_path, class: 'path-log-in'
+    New user? #{link_to 'Sign up now!', signup_path, class:'btn btn-primary path-signup'}
+  = link_to 'Go Back!', root_path, class: 'btn btn-primary path-log-in-back'

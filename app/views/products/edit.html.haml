@@ -1,7 +1,9 @@
-%h1 Edit Product
+%h1.dashboard Edit Product
+
+%img.logo-new{:alt => 'Sunzi Bistro logo', :src => '/assets/logo.jpg'}/
 
 = render 'form', product: @product
 
-= link_to 'Back to Dashboard', dashboard_path, class: 'path-new'
+= link_to 'Back to Dashboard', dashboard_path, class: 'btn btn-primary path-new'
 %br
-= link_to 'Show', @product, class: 'path-show'
+= link_to 'Show Product', @product, class: 'btn btn-primary path-show'
